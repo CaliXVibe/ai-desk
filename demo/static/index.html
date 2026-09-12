@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>AI Desk demo</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <header class="top">
+      <div>
+        <h1>AI Desk</h1>
+        <p class="sub">
+          Per-user mail, files, calendar. Drop raw job text; Night Desk files
+          three artifacts into <em>this</em> login only.
+        </p>
+      </div>
+      <form id="login" class="login">
+        <label>
+          Login
+          <select id="user" name="user"></select>
+        </label>
+        <p class="hint">No passwords. Demo ids only.</p>
+      </form>
+    </header>
+
+    <p id="banner" class="banner" hidden></p>
+
+    <main class="grid">
+      <section class="panel" id="drop-panel">
+        <h2>Drop</h2>
+        <p class="muted">Raw job text in. Mail + markdown + event out.</p>
+        <textarea id="job" rows="10" spellcheck="false"></textarea>
+        <div class="row">
+          <button id="submit" type="button">Ingest for this user</button>
+          <button id="sample" type="button" class="ghost">Load sample</button>
+        </div>
+        <p id="drop-status" class="muted" aria-live="polite"></p>
+      </section>
+
+      <section class="panel">
+        <h2>Mail <span id="mail-count" class="count">0</span></h2>
+        <ul id="mail" class="list"></ul>
+      </section>
+
+      <section class="panel">
+        <h2>Files <span id="file-count" class="count">0</span></h2>
+        <ul id="files" class="list"></ul>
+        <pre id="file-view" class="file-view" hidden></pre>
+      </section>
+
+      <section class="panel">
+        <h2>Calendar <span id="cal-count" class="count">0</span></h2>
+        <ul id="calendar" class="list"></ul>
+      </section>
+    </main>
+
+    <footer>
+      <p>
+        Isolation check:
+        <span id="iso-a"></span>
+        ·
+        <span id="iso-b"></span>
+      </p>
+      <p class="muted">
+        Counts are per user. A write for one login never increments the other.
+      </p>
+    </footer>
+    <script src="/app.js"></script>
+  </body>
+</html>

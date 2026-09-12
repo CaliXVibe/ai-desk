@@ -1,0 +1,176 @@
+:root {
+  color-scheme: dark;
+  --bg: #121418;
+  --panel: #1b1f27;
+  --ink: #e8eaed;
+  --muted: #9aa3b2;
+  --line: #2c3340;
+  --accent: #7aa2f7;
+  --ok: #9ece6a;
+  font-family: "IBM Plex Sans", "Source Sans 3", "Segoe UI", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  min-height: 100vh;
+}
+
+.top,
+footer,
+main {
+  width: min(1100px, calc(100% - 2rem));
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.top {
+  display: flex;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding: 1.5rem 0 1rem;
+  align-items: flex-start;
+}
+
+h1,
+h2 {
+  margin: 0 0 0.35rem;
+  font-weight: 600;
+}
+
+.sub,
+.muted,
+.hint {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.login label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  font-size: 0.85rem;
+}
+
+select,
+textarea,
+button {
+  font: inherit;
+  color: var(--ink);
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+}
+
+select,
+button {
+  padding: 0.45rem 0.7rem;
+}
+
+textarea {
+  width: 100%;
+  padding: 0.7rem;
+  resize: vertical;
+  line-height: 1.4;
+}
+
+button {
+  cursor: pointer;
+  background: #243044;
+  border-color: #3b4d6b;
+}
+
+button.ghost {
+  background: transparent;
+}
+
+.banner {
+  width: min(1100px, calc(100% - 2rem));
+  margin: 0 auto 1rem;
+  padding: 0.6rem 0.8rem;
+  border: 1px solid #3d4f2f;
+  background: #1c2616;
+  color: var(--ok);
+  border-radius: 6px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  padding-bottom: 1.5rem;
+}
+
+.panel {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 1rem;
+  min-height: 16rem;
+}
+
+.row {
+  display: flex;
+  gap: 0.6rem;
+  margin-top: 0.6rem;
+}
+
+.count {
+  color: var(--muted);
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.list {
+  list-style: none;
+  padding: 0;
+  margin: 0.6rem 0 0;
+}
+
+.list li {
+  border-top: 1px solid var(--line);
+  padding: 0.7rem 0;
+}
+
+.list li:first-child {
+  border-top: 0;
+}
+
+.list button.link {
+  background: none;
+  border: 0;
+  padding: 0;
+  color: var(--accent);
+  text-align: left;
+}
+
+.file-view {
+  margin-top: 0.8rem;
+  padding: 0.7rem;
+  background: #10131a;
+  border-radius: 6px;
+  overflow: auto;
+  white-space: pre-wrap;
+  font-size: 0.85rem;
+}
+
+footer {
+  padding: 0 0 2rem;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+@media (max-width: 800px) {
+  .top {
+    flex-direction: column;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
