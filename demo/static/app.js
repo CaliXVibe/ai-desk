@@ -136,6 +136,7 @@ $("submit").addEventListener("click", async () => {
 $("user").addEventListener("change", async (event) => {
   $("file-view").hidden = true;
   $("banner").hidden = true;
+  $("drop-status").textContent = "";
   await api("/api/login", {
     method: "POST",
     body: JSON.stringify({ user: event.target.value }),
